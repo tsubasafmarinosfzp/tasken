@@ -646,7 +646,7 @@ async function sendMsg(){
     const reply=data.candidates?.[0]?.content?.parts?.[0]?.text||'エラーが発生しました。';
     loadEl.querySelector('.msg-ai-text').textContent=reply;
     S.coachHist.push({role:'model',parts:[{text:reply}]});save();
-  }catch(e){loadEl.querySelector('.msg-ai-text').textContent='AIとの通信に失敗しました。APIキーを確認してください。';}
+  }catch(e){loadEl.querySelector('.msg-ai-text').textContent='ERR:'+e.message+' KEY:'+(S.apiKey?S.apiKey.slice(0,8):'empty');}
 }
 function renderStats(){
   const total=S.tasks.length,done=S.tasks.filter(t=>t.done).length,rate=total>0?Math.round(done/total*100):0;
