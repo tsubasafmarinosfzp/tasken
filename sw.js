@@ -1,4 +1,4 @@
-const CACHE_NAME = 'taskan-v1';
+const CACHE_NAME = 'taskan-v3';
 const ASSETS = [
   './',
   './index.html',
